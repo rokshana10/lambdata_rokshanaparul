@@ -7,7 +7,8 @@ def enlarge(n):
     ''' This function will '''
     return n * 1000
 
-def train_validation_test_split(X, y, train_size=0.7, val_size=0.1, test_size=0.2, random_state=None, shuffle=True):
+def train_validation_test_split(X, y, train_size=0.7, val_size=0.1,
+                                test_size=0.2, random_state=None, shuffle=True):
 
     X_train_val, X_test, y_train_val, y_test = train_test_split(
         X, y, test_size=test_size, random_state=random_state, shuffle=shuffle)
