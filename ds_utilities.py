@@ -2,5 +2,6 @@ def enlarge(n):
     ''' This function will '''
     return n * 100
 
-y = int(input("Choose a number="))
-print(y, enlarge(y))
+if _name_ == "_main_":
+    y = int(input("Choose a number="))
+    print(y, enlarge(y))
