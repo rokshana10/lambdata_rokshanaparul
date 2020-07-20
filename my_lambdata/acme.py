@@ -28,7 +28,7 @@ class Product:
             return
 
     def explode(self):
-        """Prints what will happen if the product is too flammable"""
+        """Prints that happen if the product is too flammable"""
 
         if self.weight * self.flammability < 10:
             print("'...fizzle'")
@@ -49,19 +49,19 @@ class BoxingGlove(Product):
         super().__init__(price)
 
     def explode(self):
-        """Prints what will happen if the product is too flammable"""
+        """Prints that will happen if the product is too flammable"""
         print("""\"...it's a glove.\"""")
 
     def punch(self):
-        """Prints what happens when boxing glove punches someone."""
+        """Prints that happen when boxing glove punches someone."""
         if self.weight < 5:
-            print("'That tickles.'")
+            print("'tickles.'")
             return
         elif self.weight >= 5 < 15:
-            print("'Hey that hurt!'")
+            print("'hurt'")
             return
         else:
             print('\"OUCH!\"')
             return
     pass
-    pip install -i https://test.pypi.org/simple/ lambdata-rokshanaparul
+        pip install -i https://test.pypi.org/simple/ lambdata-rokshanaparul
