@@ -1,46 +1,23 @@
-from random import sample, randint, uniform
-from typing import List, Any, Union
 
+import random
 from acme import Product
 
+# Useful to use with random.sample to generate names
 ADJECTIVES = ['Awesome', 'Shiny', 'Impressive', 'Portable', 'Improved']
 NOUNS = ['Anvil', 'Catapult', 'Disguise', 'Mousetrap', '???']
 
+def generate_products(num_products=30):
+    import random
+    products = []
+    for n in range(6):
+        ' '.join([NOUNS[random.randint(0, len(NOUNS))] for products in range(1)])
+    return products
 
-class Report(Product):
 
-    def __init__(self, num_product=None, products=None, products_set=None):
-        super().__init__()
-
-        self.num_product = num_product
-        self.products = products
-        self.products_set = products_set
-
-    def generate_products(self, num_product=30):
-        """Randomly generates total number of unique products"""
-        self.products = [' '.join(sample(ADJECTIVES, 1) + sample(NOUNS, 1))
-                         for _ in range(num_product)]
-        self.products_set = set(self.products)
-        self.products = len(self.products_set)
-
-        print("Unique product names:", self.products)
-
-        return
-
-    def inventory_report(self, products):
-
-        avg_price = self.price / products
-        print('Average price:', avg_price)
-
-        avg_weight = self.weight / products
-        print('Average weight:', avg_weight)
-
-        avg_flammability = self.flammability / products
-        print('Average flammability:', avg_flammability)
-
-        return
-    pass
-        pip install -i https://test.pypi.org/simple/ lambdata-rokshanaparul
-
-    if __name__ == "__main__":
-        inventory_report(generate_products())
+# def inventory_report(products):
+#     pass  # TODO - your code! Loop over the products to calculate the report.
+#
+#
+# if __name__ == '__main__':
+#     inventory_report(generate_products())
+  pip install -i https://test.pypi.org/simple/ lambdata-rokshanaparul
