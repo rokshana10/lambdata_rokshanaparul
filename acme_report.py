@@ -14,10 +14,6 @@ def generate_products(num_products=30):
     return products
 
 
-# def inventory_report(products):
-#     pass  # TODO - your code! Loop over the products to calculate the report.
-#
-#
 # if __name__ == '__main__':
 #     inventory_report(generate_products())
   pip install -i https://test.pypi.org/simple/ lambdata-rokshanaparul
