@@ -1,67 +1,73 @@
-import random
+# Part 1,2,3
+import random 
+from acme import Product
+from acme import Product, BoxingGlove
 
-
-class Product:
-    """Class to set Product default attributes
-    """
-
-    def __init__(self, name, price=10, weight=20, flammability=0.5,
-                 identifier=random.randint(1000000, 9999999)):
-
+# Part 1
+class Product():
+    def __init__(self, 
+                 name, 
+                 price = 10, 
+                 weight = 20, 
+                 flammability = 0.5, 
+#                  identifier
+                ):
+        
+        # random from 1000000 to 9999999, includisve
+        self.identifier = random.randint(1000000, 9999999)
         self.name = name
         self.price = price
         self.weight = weight
         self.flammability = flammability
-        self.identifier = identifier
-
+    
     def stealability(self):
-        """Prints the product's stealablility"""
-
-        if self.weight / self.price < 0.5:
-            print("'Not so stealable...'")
-            return
-        elif self.weight / self.price >= 0.5 < 1.0:
-            print("'Kinda stealable.'")
-            return
+        steal = self.price / self.weight
+        if steal < 0.5:
+            return "Not so stealable..."
+        elif (steal >= 0.5) and (steal < 1.0):
+            return "Kinda stealable."
         else:
-            print("'Very stealable!'")
-            return
-
+            return "Very stealable!"
+    
     def explode(self):
-        """Prints that happen if the product is too flammable"""
-
-        if self.weight * self.flammability < 10:
-            print("'...fizzle'")
-            return
-        elif self.weight * self.flammability >= 10 < 50:
-            print("'...boom!'")
-            return
+        expl = (self.flammability * self.weight)
+        if expl < 10:
+            return "...fizzle."
+        elif (expl >= 10) and (expl < 50):
+            return "...boom!"
         else:
-            print("'...BABOOM!!'")
-            return
-        pass
-
-
+            return "...BABOOM!!"
+    
 class BoxingGlove(Product):
-    """Class to set Boxing glove parameters.
-    """
-    def __init__(self, price=10):
-        super().__init__(price)
-
+    def __init__(self, name):
+        super().__init__(name, weight=10)
+  
     def explode(self):
-        """Prints that will happen if the product is too flammable"""
-        print("""\"...it's a glove.\"""")
-
+        return "...it's a glove."
+  
     def punch(self):
-        """Prints that happen when boxing glove punches someone."""
         if self.weight < 5:
-            print("'tickles.'")
-            return
-        elif self.weight >= 5 < 15:
-            print("'hurt'")
-            return
+            return "That tickles."
+        elif self.weight >= 5 and self.weight < 15:
+            return "Hey that hurt!"
         else:
-            print('\"OUCH!\"')
-            return
-    pass
+            return "OUCH!"
+
+
+            prod = Product("A Cool Toy")
+    print("prod.identifier", prod.identifier)
+    print("prod.name", prod.name)
+    print("prod.price", prod.price)
+    print("prod.weight", prod.weight)
+    print("prod.flammability", prod.flammability)
+
+            prod = Product("A Cool Toy")
+    print(prod.stealability())
+    print(prod.explode())
+
+            glove = BoxingGlove('Punchy the Third')
+    print(glove.price) # 10
+    print(glove.weight) # 10
+    print(glove.punch())
+        
         pip install -i https://test.pypi.org/simple/ lambdata-rokshanaparul
