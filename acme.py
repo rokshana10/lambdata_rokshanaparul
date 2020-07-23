@@ -1,10 +1,8 @@
 # Part 1,2,3
 %%writefile acme.py
-import random 
-from acme import Product
-from acme import Product, BoxingGlove
+import random
 
-# Part 1
+
 class Product():
     def __init__(self, 
                  name, 
@@ -54,7 +52,8 @@ class BoxingGlove(Product):
         else:
             return "OUCH!"
 
-
+%load acme.py
+from acme import Product
             prod = Product("A Cool Toy")
     print("prod.identifier", prod.identifier)
     print("prod.name", prod.name)
@@ -62,11 +61,16 @@ class BoxingGlove(Product):
     print("prod.weight", prod.weight)
     print("prod.flammability", prod.flammability)
 
+%load acme.py
+from acme import Product
             prod = Product("A Cool Toy")
     print(prod.stealability())
     print(prod.explode())
 
-            glove = BoxingGlove('Punchy the Third')
+%load acme.py
+from acme import Product, BoxingGlove
+
+           glove = BoxingGlove('Punchy the Third')
     print(glove.price) # 10
     print(glove.weight) # 10
     print(glove.punch())
