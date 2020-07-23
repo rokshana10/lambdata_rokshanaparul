@@ -36,4 +36,5 @@ class AcmeReportTests(unittest.TestCase):
     
 if __name__ == '__main__':
     unittest.main()
+    !python acme_test.py
     pip install -i https://test.pypi.org/simple/ lambdata-rokshanaparul
