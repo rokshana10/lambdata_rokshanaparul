@@ -1,6 +1,6 @@
-import random 
+%%writefile acme_report.py
 from random import randint, sample, uniform
-from acme import Product
+from acme import Product, BoxingGlove
 
 ADJECTIVES = ['Awesome', 'Shiny', 'Impressive', 'Portable', 'Improved']
 NOUNS = ['Anvil', 'Catapult', 'Disguise', 'Mousetrap', '???']
