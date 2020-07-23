@@ -1,4 +1,5 @@
 # Part 1,2,3
+%%writefile acme.py
 import random 
 from acme import Product
 from acme import Product, BoxingGlove
@@ -69,5 +70,4 @@ class BoxingGlove(Product):
     print(glove.price) # 10
     print(glove.weight) # 10
     print(glove.punch())
-        
-        pip install -i https://test.pypi.org/simple/ lambdata-rokshanaparul
+    pip install -i https://test.pypi.org/simple/ lambdata-rokshanaparul
